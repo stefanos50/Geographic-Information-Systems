@@ -1,0 +1,126 @@
+Table Vessels {
+  mmsi integer [pk,not null,unique]
+	imo integer
+	name varchar(24)
+  flag varchar(17)
+	type varchar(37)
+}
+
+
+Table Unipi_Kinematic_AIS{
+    t double_precision
+    type integer
+    mmsi integer
+    lon double_precision
+    lat double_precision
+    heading integer
+    turn double_precision
+    speed double_precision
+    course double_precision
+}
+
+Table Fishing_Ports{
+      id integer [pk,not null,unique]
+      geom geometry
+      conceptid varchar(254)
+      preflabel varchar(254)
+      modified varchar(254)
+      altlabel varchar(254)
+      country varchar(254)
+      latitude double_precision
+      longtitude double_precision
+      note varchar(254)
+}
+
+Table Sealine{
+  id integer [pk,not null,unique]
+  geom geometry
+  length numeric
+  type varchar(254)
+}
+
+Table Ports{
+    id integer [pk,not null,unique]
+    index_no double_precision
+    region_no double_precision
+    port_name varchar(254)
+    country varchar(254)
+    latitude double_precision
+    longtitude double_precision
+    lat_deg double_precision
+    lat_min double_precision
+    lat_hemi varchar(254)
+    long_deg double_precision
+    long_min double_precision
+    long_hemi varchar(254)
+    pub varchar(254)
+    chart varchar(254)
+    harborsize varchar(254)
+    harbortype varchar(254)
+    shelter varchar(254)
+    entry_tide varchar(254)
+    entryswell varchar(254)
+    entry_ice varchar(254)
+    entryother varchar(254)
+    overhd_lim varchar(254)
+    chan_depth varchar(254)
+    anch_depth varchar(254)
+    cargodepth varchar(254)
+    oil_depth varchar(254)
+    tide_range varchar(254)
+    max_vessel varchar(254)
+    holdground varchar(254)
+    turn_basin varchar(254)
+    portofentr varchar(254)
+    us_rep varchar(254)
+    etamessage varchar(254)
+    pilot_reqd varchar(254)
+    pilotvail varchar(254)
+    loc_assist varchar(254)
+    pilotadvsd varchar(254)
+    tugsalvage varchar(254)
+    tug_assist varchar(254)
+    pratique varchar(254)
+    sscc_cert varchar(254)
+    quar_other varchar(254)
+    comm_phone varchar(254)
+    comm_fax varchar(254)
+    comm_radio varchar(254)
+    comm_vhf varchar(254)
+    comm_air varchar(254)
+    comm_rail varchar(254)
+    cargowharf varchar(254)
+    cargo_anch varchar(254)
+    cargmdmoor varchar(254)
+    carbchmoor varchar(254)
+    caricemoor varchar(254)
+    med_facil varchar(254)
+    garbage varchar(254) 
+    degauss varchar(254)
+    drtyballst varchar(254)
+    cranefixed varchar(254)
+    cranemobil varchar(254)
+    cranefloat varchar(254)
+    lift_100_ varchar(254)
+    lift50_100 varchar(254)
+    fift_25_49 varchar(254)
+    lift_0_24 varchar(254)
+    longshore varchar(254)
+    electrical varchar(254)
+    serv_steam varchar(254)
+    nav_equip varchar(254)
+    elecrepair varchar(254)
+    provisions varchar(254)
+    water varchar(254)
+    fuel_oil varchar(254)
+    diesel varchar(254)
+    decksupply varchar(254)
+    eng_supply varchar(254)
+    repaircode varchar(254)
+    drydock varchar(254)
+    railway varchar(254)
+    geom geometry
+}
+
+
+Ref: Unipi_Kinematic_AIS.mmsi >  Vessels.mmsi
